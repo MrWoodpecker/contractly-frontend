@@ -38,9 +38,7 @@ const Contracts: React.FC<Page> = (props) => {
 
 
     /**
-     * Go to another page.
-     * 
-     * @param type 
+     * Navigate to "More" page.
      */
     const onClick_showMorePage = () => {
 

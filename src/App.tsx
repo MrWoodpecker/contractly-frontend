@@ -31,7 +31,6 @@ import './theme/variables.css';
 
 /* Custom CSS */
 import './theme/global.scss';
-import './pages/Contracts.css'; // TODO: rausnehmen
 
 
 setupIonicReact();

@@ -1,6 +1,19 @@
-import { IonBackButton, IonButtons, IonCard, IonCardContent, IonContent, IonHeader, IonItem, IonLabel, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { 
+  IonBackButton, 
+  IonButtons, 
+  IonCard, 
+  IonCardContent, 
+  IonContent, 
+  IonHeader, 
+  IonItem, 
+  IonLabel, 
+  IonPage, 
+  IonTitle, 
+  IonToolbar 
+} from '@ionic/react';
 import { Page } from '../types/global';
 import { useHistory } from 'react-router';
+import React from 'react';
 
 
 const More: React.FC<Page> = (props) => {
@@ -8,17 +21,64 @@ const More: React.FC<Page> = (props) => {
   const history = useHistory();
 
 
-  const navigateToSubPage = (type: 'OPENSOURCE' | 'IMPRINT' | 'PRIVACY') => {
+  const navigateToSubPage = (page: string) => {
     
-    if(type === 'OPENSOURCE') {
-      history.push('/more/opensource');
-    } else if(type === 'IMPRINT') {
-      history.push('/more/imprint');
-    } else if(type === 'PRIVACY') {
-      history.push('/more/privacy');
-    }
+    history.push('/more/' + page);
 
   }
+
+
+  const menus = [
+    {
+      name: null,
+      items: [
+        {
+          name: 'Profil erstellen',
+          page: '/createaccount'
+        },
+        {
+          name: 'App-Informationen',
+          page: '/appinfos'
+        },
+        {
+          name: 'Kontakt',
+          page: '/contact'
+        }
+      ]
+    },
+    {
+      name: null,
+      items: [
+        {
+          name: 'Einstellungen',
+          page: '/settings'
+        }
+      ]
+    },
+    {
+      name: 'Rechtliches',
+      items: [
+        {
+          name: 'Datenschutz',
+          page: '/privacy'
+        },
+        {
+          name: 'Impressum',
+          page: '/imprint'
+        }
+      ]
+    },
+    {
+      name: 'Contractly',
+      items: [
+        {
+          name: 'Open-Source',
+          page: '/opensource'
+        }
+      ]
+    }
+  ];
+
 
   return (
     <IonPage>
@@ -36,6 +96,29 @@ const More: React.FC<Page> = (props) => {
           <IonTitle size="large">More</IonTitle>
         </IonToolbar>
       </IonHeader>
+
+      {
+        menus.map(menu => (
+          <React.Fragment>
+            {
+              menu.name ? <p className="listheader">{ menu.name }</p> : null
+            }
+            <IonCard className="mt-0">
+              <IonCardContent className="ion-no-padding">
+                {
+                  menu.items.map(item => (
+                    <IonItem detail onClick={() => navigateToSubPage(item.page)}>
+                      <IonLabel>
+                        { item.name }
+                      </IonLabel>
+                    </IonItem>
+                  ))
+                }
+              </IonCardContent>
+            </IonCard>
+          </React.Fragment>
+        ))
+      }
 
         <IonCard>
           <IonCardContent className="ion-no-padding">

@@ -1,6 +1,6 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "Contract Manager",
+	"appId": "design.christianarp.contractly",
+	"appName": "Contractly",
 	"webDir": "build",
 	"bundledWebRuntime": false
 }
