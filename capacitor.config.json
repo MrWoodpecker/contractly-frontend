@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Contract Manager",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}

@@ -1,0 +1,45 @@
+{
+    "Pages": {
+        "Contracts": {
+            "Titles": {
+                "Contracts": {
+                    "de": "Verträge",
+                    "en": "Contracts",
+                    "pd": "Verdrag"
+                }
+            },
+            "Labels": {
+                "CostPerWeek": {
+                    "de": "Kosten pro Woche",
+                    "en": "Cost per week",
+                    "pd": "Kösten elk Week"
+                },
+                "CostPerMonth": {
+                    "de": "Kosten pro Monat",
+                    "en": "Cost per month",
+                    "pd": "Kösten elk Maand"
+                },
+                "CostPerYear": {
+                    "de": "Kosten pro Jahr",
+                    "en": "Cost per year",
+                    "pd": "Kösten elk Jahr"
+                },
+                "Contract": {
+                    "de": "Vertrag",
+                    "en": "Contract",
+                    "pd": "Verdrag"
+                },
+                "Contracts": {
+                    "de": "Verträge",
+                    "en": "Contracts",
+                    "pd": "Verdrag"
+                },
+                "AddNewContract": {
+                    "de": "Vertrag hinzufügen...",
+                    "en": "Add new contract...",
+                    "pd": "Verdrag toföögen..."
+                }
+            }
+        }
+    }
+}

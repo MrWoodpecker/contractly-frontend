@@ -1,0 +1,1 @@
+export type DateRangeSingular = 'WEEK' | 'MONTH' | 'YEAR';

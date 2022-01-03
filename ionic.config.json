@@ -1,0 +1,7 @@
+{
+  "name": "Contract Manager",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
