@@ -21,7 +21,7 @@ const SubHeader: React.FC = () => {
 
     return (
         <div className="subheader">
-            <IonCard>
+            <IonCard className="mr-0">
                 <IonCardContent>
                 <p style={{ fontSize: "1.2rem", fontWeight: 500 }}>{ gl_getTotalCostsOfContracts(gl_priceRange) } €</p>
                 <p>

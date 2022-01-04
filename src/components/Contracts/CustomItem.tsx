@@ -5,12 +5,13 @@ import { Contract } from '../../types/contracts';
 
 
 type type_Props = {
-  contract: Contract
+  contract: Contract,
+  onClick: (id: number) => void;
 }
 const CustomItem: React.FC<type_Props> = (props) => {
 
     return (
-        <IonItem detail>
+        <IonItem detail onClick={() => props.onClick(props.contract.id)}>
             <IonLabel>
                 { props.contract.name }
             </IonLabel>

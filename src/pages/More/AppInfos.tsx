@@ -1,79 +1,52 @@
 import { 
-  IonBackButton, 
-  IonButtons, 
-  IonCard, 
-  IonCardContent, 
-  IonContent, 
-  IonHeader, 
-  IonItem, 
-  IonLabel, 
-  IonPage, 
-  IonTitle, 
-  IonToolbar 
+    IonBackButton, 
+    IonButtons, 
+    IonCard, 
+    IonCardContent, 
+    IonContent, 
+    IonHeader, 
+    IonItem, 
+    IonLabel, 
+    IonPage, 
+    IonTitle, 
+    IonToolbar 
 } from '@ionic/react';
-import { Page } from '../types/global';
-import { useHistory } from 'react-router';
 import React from 'react';
+import { Page } from '../../types/global';
+import { useHistory } from 'react-router';
+import config from '../../etc/config.json';
 
 
-const More: React.FC<Page> = (props) => {
+const AppInfos: React.FC<Page> = (props) => {
 
   const history = useHistory();
 
 
   const navigateToSubPage = (page: string) => {
     
-    history.push('/more/' + page);
+    history.push('/more/appinfos/' + page);
 
   }
-
 
   const menus = [
     {
       name: null,
       items: [
         {
-          name: 'Profil erstellen',
-          page: 'createaccount'
+          name: 'Über die App',
+          page: 'about'
         },
         {
-          name: 'App-Informationen',
-          page: 'appinfos'
+          name: 'Häufige Fragen',
+          page: 'faq'
         },
         {
-          name: 'Kontakt',
-          page: 'contact'
-        }
-      ]
-    },
-    {
-      name: null,
-      items: [
-        {
-          name: 'Einstellungen',
-          page: 'settings'
-        }
-      ]
-    },
-    {
-      name: 'Rechtliches',
-      items: [
-        {
-          name: 'Datenschutz',
-          page: 'privacy'
+          name: 'Genutzte Technolgien',
+          page: 'technologies'
         },
         {
-          name: 'Impressum',
-          page: 'imprint'
-        }
-      ]
-    },
-    {
-      name: 'Contractly',
-      items: [
-        {
-          name: 'Open-Source',
-          page: 'opensource'
+          name: 'Genutzte Services',
+          page: 'services'
         }
       ]
     }
@@ -87,13 +60,13 @@ const More: React.FC<Page> = (props) => {
           <IonButtons slot="start">
             <IonBackButton />
           </IonButtons>
-          <IonTitle>More</IonTitle>
+          <IonTitle>App-Informationen</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
       <IonHeader collapse="condense">
         <IonToolbar>
-          <IonTitle size="large">More</IonTitle>
+          <IonTitle size="large">App-Informationen</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -119,9 +92,14 @@ const More: React.FC<Page> = (props) => {
           </React.Fragment>
         ))
       }
+
+      <p className="text cen small">Version { config.version } ({ config.revision })</p>
+      { config.env === "DEV" ? <p className="text cen small">DEV-VESION</p> : null }
+      { config.env === "TEST" ? <p className="text cen small">TEST-VESION</p> : null }
+
       </IonContent>
     </IonPage>
   );
 };
 
-export default More;
+export default AppInfos;

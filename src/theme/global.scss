@@ -1,4 +1,5 @@
 @use 'spacing.scss';
+@use 'typography.scss';
 
 /* Custom elements */
 .memberCircle {
@@ -34,6 +35,10 @@
 
 ion-card {
     --background: var(--ion-color-step-200);
+
+    ion-accordion {
+        background: #00000000;
+    }
 
     ion-card-content {
         ion-item {

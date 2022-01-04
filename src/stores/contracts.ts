@@ -1,7 +1,7 @@
 import create from 'zustand';
 import dayjs from 'dayjs';
 import PubSub from "pubsub-js";
-import { Category, CategoryWithoutEntries } from '../types/contracts';
+import { Category, CategoryWithoutEntries, Contract } from '../types/contracts';
 import { getPriceOfContract } from '../etc/utilities';
 
 type State = {
@@ -11,6 +11,7 @@ type State = {
     getNumberOfContracts: () => number,
     getTotalCostsOfContracts: (type: 'WEEK' | 'MONTH' | 'YEAR', categoryId?: number) => number,
 
+    getContractById: (id: number) => Contract | undefined,
     // getCategoriesWithoutEntries: () => Array<CategoryWithoutEntries>,
 }
 
@@ -86,6 +87,27 @@ export const useContractsStore = create<State>((set, get) => ({
 
 
         return totalCostsOfContracts;
+
+    },
+
+
+    getContractById: (id) => {
+
+        let contract: Contract | undefined = undefined;
+
+
+        get().categories.forEach(category => {
+            category.entries.forEach(entry => {
+                if(entry.id === id) {
+                    contract = entry;
+                }
+            })
+        });
+
+        console.log(contract)
+
+
+        return contract;
 
     }
 

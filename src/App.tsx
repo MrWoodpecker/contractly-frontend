@@ -5,10 +5,15 @@ import { useRef } from 'react';
 
 /* Custom Pages */
 import Contracts from './pages/Contracts';
+import ContractDetails from './pages/ContractDetails';
 import More from './pages/More';
 import OpenSource from './pages/More/OpenSource';
 import Imprint from './pages/More/Imprint';
 import Privacy from './pages/More/Privacy';
+import AppInfos from './pages/More/AppInfos';
+import Services from './pages/More/AppInfos/Services';
+import Technologies from './pages/More/AppInfos/Technologies';
+
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -50,6 +55,10 @@ const App: React.FC = () => {
               exact 
               path="/contracts" />
             <Route 
+              render={ () => <ContractDetails router={ routerRef.current } /> } 
+              exact 
+              path="/contractdetails" />
+            <Route 
               render={ () => <More router={ routerRef.current } /> } 
               exact 
               path="/more" />
@@ -57,6 +66,18 @@ const App: React.FC = () => {
               render={ () => <OpenSource router={ routerRef.current } /> } 
               exact
               path="/more/opensource" />
+            <Route 
+              render={ () => <AppInfos router={ routerRef.current } /> } 
+              exact
+              path="/more/appinfos" />
+            <Route 
+              render={ () => <Services router={ routerRef.current } /> } 
+              exact
+              path="/more/appinfos/services" />
+            <Route 
+              render={ () => <Technologies router={ routerRef.current } /> } 
+              exact
+              path="/more/appinfos/technologies" />
             <Route 
               render={ () => <Imprint router={ routerRef.current } /> } 
               exact

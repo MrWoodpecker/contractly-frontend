@@ -6,7 +6,8 @@ import CustomItem from './CustomItem';
 
 
 type type_Props = {
-  category: Category
+  category: Category,
+  onClick: (id: number) => void;
 }
 const CustomList: React.FC<type_Props> = (props) => {
 
@@ -17,7 +18,8 @@ const CustomList: React.FC<type_Props> = (props) => {
         <IonCardContent className="ion-no-padding">
           { props.category.entries.map(entry => (
             <CustomItem
-              contract={entry} />
+              contract={entry}
+              onClick={props.onClick} />
           )) }
         </IonCardContent>
       </IonCard>

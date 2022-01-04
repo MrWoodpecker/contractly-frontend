@@ -47,6 +47,20 @@ const Contracts: React.FC<Page> = (props) => {
     }
 
 
+    /**
+     * 
+     */
+    const onClick_contract = (id: number) => {
+
+        let payload = {
+            id: id,
+        }
+
+        history.push('/contractdetails', payload)
+
+    }
+
+
     return (
         <IonPage>
             <IonHeader translucent>
@@ -67,7 +81,8 @@ const Contracts: React.FC<Page> = (props) => {
                 {
                     gl_categories.map(category => (
                         <CustomList
-                            category={category} />
+                            category={category}
+                            onClick={onClick_contract} />
                     ))
                 }
 
@@ -80,115 +95,6 @@ const Contracts: React.FC<Page> = (props) => {
                         </IonItem>
                     </IonCardContent>
                 </IonCard>
-
-            {/* <IonModal
-            isOpen={showDetailsModal}
-            swipeToClose
-            presentingElement={props.router || undefined}
-            onDidDismiss={() => setShowDetailsModal(false) }>
-                <IonHeader translucent>
-                <IonToolbar>
-                    <IonTitle>Netflix</IonTitle>
-                </IonToolbar>
-                </IonHeader>
-                <IonContent fullscreen>
-                <IonCard>
-                    <IonCardContent className="ion-no-padding">
-                    <IonItem detail>
-                        <IonLabel>
-                        Name
-                        </IonLabel>
-                        <IonNote slot='end'>
-                        Netflix
-                        </IonNote>
-                    </IonItem>
-                    <IonItem detail>
-                        <IonLabel>
-                        Category
-                        </IonLabel>
-                        <IonNote slot='end'>
-                        Entertainment
-                        </IonNote>
-                    </IonItem>
-                    </IonCardContent>
-                </IonCard>
-
-                <IonCard>
-                    <IonCardContent className="ion-no-padding">
-                    <IonItem detail>
-                        <IonLabel>
-                        Price
-                        </IonLabel>
-                        <IonNote slot='end'>
-                        17,99 € per month
-                        </IonNote>
-                    </IonItem>
-                    <IonItem detail>
-                        <IonLabel>
-                        Payment Method
-                        </IonLabel>
-                        <IonNote slot='end'>
-                        PayPal
-                        </IonNote>
-                    </IonItem>
-                    </IonCardContent>
-                </IonCard>
-
-                <IonCard>
-                    <IonCardContent className="ion-no-padding">
-                    <IonItem detail>
-                        <IonLabel>
-                        Vertragsstart
-                        </IonLabel>
-                        <IonNote slot='end'>
-                        01.12.2015
-                        </IonNote>
-                    </IonItem>
-                    <IonItem detail>
-                        <IonLabel>
-                        Mindestlaufzeit
-                        </IonLabel>
-                        <IonNote slot='end'>
-                        keine
-                        </IonNote>
-                    </IonItem>
-                    <IonItem detail>
-                        <IonLabel>
-                        Verlängerung nach MVL
-                        </IonLabel>
-                        <IonNote slot='end'>
-                        keine
-                        </IonNote>
-                    </IonItem>
-                    <IonItem detail>
-                        <IonLabel>
-                        Kündigungserinnerung
-                        </IonLabel>
-                        <IonNote slot='end'>
-                        deaktiviert
-                        </IonNote>
-                    </IonItem>
-                    </IonCardContent>
-                </IonCard>
-
-                <IonCard>
-                    <IonCardContent className="ion-no-padding">
-                    <IonItem detail>
-                        <IonLabel>
-                        <p>christian.arp@posteo.de</p>
-                        <p>Kundennummer</p>
-                        </IonLabel>
-                    </IonItem>
-                    <IonItem detail>
-                        <IonLabel>
-                        <p>49 130 890 678</p>
-                        <p>Buchungskonto</p>
-                        </IonLabel>
-                    </IonItem>
-                    </IonCardContent>
-                </IonCard>
-                </IonContent>
-            </IonModal> */}
             </IonContent>
         </IonPage>
     );
