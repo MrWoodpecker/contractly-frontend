@@ -54,6 +54,16 @@ const ContractDetails: React.FC<Page> = (props) => {
     });
 
 
+    const onClick_editDetail = (type: 'NAME' | 'CATEGORY') => {
+        if(type === 'NAME') {
+            history.push('/contract/edit?type=name');
+        } else if(type === 'CATEGORY') {
+            history.push('/contract/edit?type=category');
+        }
+        
+    }
+
+
     return (
         <IonPage>
             <IonHeader translucent>
@@ -70,7 +80,7 @@ const ContractDetails: React.FC<Page> = (props) => {
 
                 <IonCard>
                     <IonCardContent className="ion-no-padding">
-                        <IonItem detail>
+                        <IonItem onClick={() => onClick_editDetail('NAME')} detail>
                             <IonLabel>
                                 Name
                             </IonLabel>
@@ -78,7 +88,7 @@ const ContractDetails: React.FC<Page> = (props) => {
                                 { contract?.name }
                             </IonNote>
                         </IonItem>
-                        <IonItem detail>
+                        <IonItem onClick={() => onClick_editDetail('CATEGORY')} detail>
                             <IonLabel>
                                 Category
                             </IonLabel>

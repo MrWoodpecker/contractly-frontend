@@ -6,6 +6,7 @@ import { useRef } from 'react';
 /* Custom Pages */
 import Contracts from './pages/Contracts';
 import ContractDetails from './pages/ContractDetails';
+import ContractEdit from './pages/ContractEdit';
 import More from './pages/More';
 import OpenSource from './pages/More/OpenSource';
 import Imprint from './pages/More/Imprint';
@@ -58,6 +59,10 @@ const App: React.FC = () => {
               render={ () => <ContractDetails router={ routerRef.current } /> } 
               exact 
               path="/contractdetails" />
+            <Route 
+              render={ () => <ContractEdit router={ routerRef.current } /> } 
+              exact 
+              path="/contract/edit" />
             <Route 
               render={ () => <More router={ routerRef.current } /> } 
               exact 
